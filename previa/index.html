@@ -810,6 +810,11 @@ const ROLES = {estudante:{nome:'Estudante',desc:'Lê, curte, salva, comenta e su
 const canPublish = () => S.role==='comite'||S.role==='curadoria';
 
 /* ---------- Peças de interface ---------- */
+function imgCredit(p){
+  const c=p.imgCredit;
+  if(!c) return 'Foto: '+esc(p.credit||p.author)+'.';
+  return `Imagem: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.autor)}</a> · ${esc(c.licenca)}, via Wikimedia Commons.`;
+}
 function avatar(p){
   if(isRedacao(p)) return `<span class="av brand-av" aria-hidden="true">${ico('book')}</span>`;
   const n=napOf(p.nap); return `<span class="av c-${n.cor}" aria-hidden="true">${ico(n.icon)}</span>`;
@@ -969,7 +974,7 @@ function viewArticle(id){
   const s=secOf(p.section), n=napOf(p.nap), cad=s?cadOf(s.cad):null, liked=S.likes.includes(p.id), saved=S.saves.includes(p.id);
   const imgs = p.images?.length>1 ? `<div class="gallery" aria-label="Galeria com ${p.images.length} imagens">${p.images.map((src,i)=>`<div><div class="media"><img src="${esc(src)}" alt="${esc(p.alt)}${i?' (detalhe)':''}"></div></div>`).join('')}</div><figcaption>Deslize para ver ${p.images.length} imagens · ${esc(p.credit||p.author)}</figcaption>`
     : p.video ? `<video controls playsinline preload="metadata" poster="${esc(p.image||'')}" src="${esc(p.video)}">${p.captions?`<track kind="captions" src="${esc(captionURL(p.captions))}" srclang="pt-BR" label="Português" default>`:''}</video><figcaption>Vídeo com legendas · ${esc(p.credit||p.author)}</figcaption>`
-    : `<div class="media" data-tap="${esc(p.id)}">${coverMarkup(p)}<span class="burst" aria-hidden="true"><svg viewBox="0 0 24 24">${PATHS.heart}</svg></span></div>${p.image?`<figcaption>${esc(p.alt)} · ${esc(p.credit||p.author)}</figcaption>`:''}`;
+    : `<div class="media" data-tap="${esc(p.id)}">${coverMarkup(p)}<span class="burst" aria-hidden="true"><svg viewBox="0 0 24 24">${PATHS.heart}</svg></span></div>${p.image?`<figcaption>${esc(p.alt)}. ${imgCredit(p)}</figcaption>`:''}`;
   const related = allPosts().filter(x=>x.id!==p.id&&(x.section===p.section||x.nap===p.nap)).slice(0,3);
   const cite = `${p.author.toUpperCase()}. ${p.title}. ${P.nome}: ${P.subtitulo.toLowerCase()}, ${P.escola}, ${P.cidade}, ${P.vol}, ${P.num}, ${P.mes} Disponível em: ${location.href.split('#')[0]}#materia-${p.id}. Acesso em: ${dateLabel(P.hoje)}.`;
   return `<div class="article-top"><button class="iconbtn" data-back aria-label="Voltar">${ico('back')}</button><span class="t">${esc(s?s.titulo:p.format)}</span><button class="iconbtn" data-share="${esc(p.id)}" aria-label="Compartilhar">${ico('send')}</button></div>
