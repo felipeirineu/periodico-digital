@@ -821,7 +821,7 @@ function avatar(p){
 }
 function authorLink(p){ return isRedacao(p)?`<a href="#edicao">${esc(p.author)}</a>`:`<a href="#nap-${p.nap.toLowerCase()}">${esc(p.author)}</a>`; }
 function coverMarkup(p){
-  if(p.image) return `<img src="${esc(p.image)}" alt="${esc(p.alt)}" loading="lazy" draggable="false">`;
+  if(p.image) return `<img src="${esc(p.image)}" alt="${esc(p.alt)}" loading="lazy" draggable="false">${p.verdict?`<span class="verdict">${esc(p.verdict.toUpperCase())}</span>`:''}`;
   const s=secOf(p.section), n=napOf(p.nap), cor=s?s.cor:n.cor;
   return `<div class="tcover c-${cor}"><span class="tc-sec">${ico(s?s.icon:n.icon)}<span>${esc(s?s.titulo:p.format)}</span></span><strong>${esc(p.cover||p.title)}</strong><span class="tc-mark">${P.nome}</span>${p.verdict?`<span class="verdict">${esc(p.verdict.toUpperCase())}</span>`:''}</div>`;
 }
