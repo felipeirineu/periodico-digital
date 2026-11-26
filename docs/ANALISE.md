@@ -57,14 +57,11 @@ A base é sólida: HTML semântico, foco visível, legendas no vídeo, transcri�
 
 ### Nome
 
-Sugestão principal: **Hipótese**, com o subtítulo "Periódico de ciência e tecnologia dos estudantes". É curto, soa como ciência, funciona como marca no topo do app e cabe em selos e camisetas. Toda pergunta de investigação começa com uma hipótese, e é isso que as matérias contam.
-
-Alternativas: **Entre NAPs** (manter, por já ser conhecido), **Laboratório Aberto**, **Eureka Pio X**, **Pio Ciência**.
-Na prévia, o nome fica numa única constante (`P.nome`) e pode ser trocado em um minuto.
+Decisão: manter **Entre NAPs**, com o subtítulo "Periódico de ciência e tecnologia dos estudantes". O nome já é conhecido pela comunidade e fala dos quatro NAPs. Alternativas avaliadas: Hipótese, Laboratório Aberto, Eureka Pio X.
 
 ### Identidade visual
 
-- Azul-marinho institucional Marista como cor principal e amarelo do uniforme como destaque, usado com parcimônia (anel dos stories, botão de capa).
+- Azul-marinho institucional Marista nas barras de navegação (topo no celular, menu lateral no PC), com o amarelo do uniforme como destaque (marca, anel dos stories, item ativo).
 - As quatro cores dos NAPs (verde, amarelo, azul, roxo) identificam autoria e seções.
 - Tipografia sem serifa para a interface (familiar para quem usa redes sociais) e serifada para títulos e texto das matérias (leitura de periódico).
 - Modo escuro automático.
@@ -82,14 +79,16 @@ Na prévia, o nome fica numa única constante (`P.nome`) e pode ser trocado em u
 
 | Lugar | O que tem |
 | --- | --- |
-| **Início** | Stories interativos (Fato ou Fake?, Enquete, Desafio, Pergunte, Agenda), capa da edição em carrossel deslizável (sem troca automática) e feed com uma matéria por cartão. Aba "Seguindo" mostra só os NAPs que a pessoa segue |
-| **Explorar** | Busca (inclui termos do glossário), perfis dos NAPs, cadernos e seções em dois níveis, grade de miniaturas |
+| **Início** | Faixa de seções logo abaixo dos stories. Stories interativos (Fato ou Fake?, Enquete, Desafio, Pergunte, Agenda), capa da edição em carrossel deslizável (sem troca automática) e feed com uma matéria por cartão. Aba "Seguindo" mostra só os NAPs que a pessoa segue |
+| **Seções** | Busca (inclui termos do glossário), cartões de cada seção agrupados por caderno, com descrição e número de matérias, e perfis dos NAPs. Cada seção tem página própria com faixa colorida, atalho para as seções vizinhas e as matérias. No PC, a lista de seções fica sempre visível no menu lateral |
 | **Publicar / Sugerir** | Comitê publica (com pré-visualização ao vivo do cartão). Qualquer estudante sugere pauta |
 | **Edição** | Sumário por caderno e seção, fluxo editorial, política editorial, expediente, inspirações e arquivo de edições |
 | **Perfil** | Salvos, curtidas, envios com status e retorno da curadoria |
 | **Curadoria** | Fila única de publicações, comentários e pautas, com campo de retorno para a autoria e alerta de matéria de ciência sem fonte |
 
-Gestos familiares: tocar duas vezes na imagem para curtir, deslizar a capa, salvar com o marcador, compartilhar por link ou WhatsApp.
+Gestos familiares: tocar duas vezes na imagem para curtir, número de curtidas e de comentários ao lado de cada ícone, deslizar a capa, tocar nas laterais ou deslizar para passar os stories, salvar com o marcador, compartilhar por link ou WhatsApp.
+
+Autoria: cada matéria é assinada por quem a produziu (comitê de cada NAP, professores ou curadoria docente). "Redação Entre NAPs" assina apenas a capa da edição.
 
 ### Camada de periódico científico
 
@@ -99,7 +98,7 @@ Inspirada no [Frontiers for Young Minds](https://kids.frontiersin.org/about), pe
 - **Pergunta de investigação** nas matérias do Diário de Bordo.
 - **Glossário** ao fim do texto.
 - **Conexão com a BNCC**, **fontes consultadas** e **como citar** (formato ABNT).
-- **Identificador permanente** por matéria (`HIP·v1n0·e08`), volume, número e periodicidade.
+- **Identificador permanente** por matéria (`EN·v1n0·e08`), volume, número e periodicidade.
 - **Fluxo editorial público**: pauta, revisão por pares estudantis (comitê de outro NAP), curadoria docente e publicação.
 
 ## 4. O que a prévia faz e o que é simulado

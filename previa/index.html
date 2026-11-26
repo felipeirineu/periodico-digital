@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!--HEAD-START-->
-<title>Hipótese · Marista Pio X</title>
+<title>Entre NAPs · Marista Pio X</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Periódico digital de ciência e tecnologia dos estudantes do Colégio Marista Pio X.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +21,7 @@
   --y:#E8AE00; --y-soft:#FFF2C2; --y-deep:#6A4900;
   --b:#1E8BC3; --b-soft:#DDF0FA; --b-deep:#0E5175;
   --p:#7C5CC4; --p-soft:#EEE8FA; --p-deep:#4A3285;
+  --navy:#0B3C6E; --navy-2:#0F4A85; --navy-ink:#FFFFFF; --navy-muted:#B9CFE4;
   --scrim:rgba(8,20,34,.62); --shadow:0 1px 2px rgba(15,34,54,.06),0 10px 30px rgba(15,34,54,.08);
   --f-ui:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-serif:"Newsreader",Georgia,"Times New Roman",serif;
@@ -33,6 +34,7 @@
   --ok:#5CC57D; --warn:#E9B44C; --bad:#F27A6D;
   --g:#7CC250; --g-soft:#16271A; --g-deep:#A9DE8B; --y:#F2C230; --y-soft:#2A2310; --y-deep:#F6D774;
   --b:#3AA6DC; --b-soft:#0F2534; --b-deep:#8DD0F2; --p:#9B7EE0; --p-soft:#1F1934; --p-deep:#C9B6F5;
+  --navy:#0A2744; --navy-2:#123A63; --navy-ink:#FFFFFF; --navy-muted:#A9C0D8;
   --scrim:rgba(0,0,0,.7); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#08111B; --surface:#0F1A27; --surface-2:#162333; --ink:#E5ECF4; --muted:#93A5B8; --line:#1F2F42;
@@ -40,12 +42,13 @@
   --ok:#5CC57D; --warn:#E9B44C; --bad:#F27A6D;
   --g:#7CC250; --g-soft:#16271A; --g-deep:#A9DE8B; --y:#F2C230; --y-soft:#2A2310; --y-deep:#F6D774;
   --b:#3AA6DC; --b-soft:#0F2534; --b-deep:#8DD0F2; --p:#9B7EE0; --p-soft:#1F1934; --p-deep:#C9B6F5;
+  --navy:#0A2744; --navy-2:#123A63; --navy-ink:#FFFFFF; --navy-muted:#A9C0D8;
   --scrim:rgba(0,0,0,.7); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-ui);-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--navy)}
 a{color:var(--link)}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer;background:none;border:0;padding:0}
@@ -67,31 +70,35 @@ svg.i{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-widt
 
 /* ---------- Estrutura ---------- */
 .app{min-height:100vh}
-.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--surface);border-bottom:1px solid var(--line);
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--navy);color:var(--navy-ink);border-bottom:3px solid var(--sun);
   display:flex;align-items:center;justify-content:space-between;gap:8px;height:56px;
   padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
 .topbar .acts{display:flex;gap:2px}
+.topbar .iconbtn,.topbar .brand{color:var(--navy-ink)}
+.topbar .iconbtn:hover{background:rgba(255,255,255,.12)}
+.topbar .wordmark small{color:var(--navy-muted)}
 .iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;color:var(--ink);position:relative}
 .iconbtn:hover{background:var(--surface-2)}
 .dot-badge{position:absolute;top:7px;right:7px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--like);color:#fff;font-size:10.5px;font-weight:800;display:grid;place-items:center;border:2px solid var(--surface)}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
-.mark{width:34px;height:34px;border-radius:10px;background:#0B3C6E;display:grid;place-items:center;flex:none;position:relative}
-.mark b{font:italic 600 22px/1 var(--f-serif);color:#fff;transform:translateY(-1px)}
-.mark i{position:absolute;right:6px;bottom:6px;width:6px;height:6px;border-radius:50%;background:#FFC72C}
+.mark{width:36px;height:36px;border-radius:10px;background:#FFC72C;color:#0B3C6E;display:grid;place-items:center;flex:none}
+.mark svg.i{width:22px;height:22px;stroke-width:2}
 .wordmark{display:flex;flex-direction:column;line-height:1;min-width:0}
-.wordmark strong{font:italic 600 24px/1 var(--f-serif);letter-spacing:-.01em}
+.wordmark strong{font:600 21px/1 var(--f-ui);letter-spacing:-.04em;white-space:nowrap}
+.wordmark strong b{font-weight:800}
 .wordmark small{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:4px;white-space:nowrap}
 
 .nav{position:fixed;z-index:30;background:var(--surface);border-top:1px solid var(--line);left:0;right:0;bottom:0;
   display:flex;justify-content:space-around;padding-bottom:env(safe-area-inset-bottom,0px);
   padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
-.nav .nav-brand,.nav .nav-foot{display:none}
+.nav .nav-brand,.nav .nav-foot,.nav .nav-secs{display:none}
 .nav a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:58px;color:var(--muted);text-decoration:none;font-size:10.5px;font-weight:700;position:relative}
-.nav a[aria-current="page"]{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--brand)}
+.nav a[aria-current="page"]::before{content:"";position:absolute;top:0;left:28%;right:28%;height:3px;border-radius:0 0 3px 3px;background:var(--sun)}
 .nav a[aria-current="page"] svg.i{stroke-width:2.4}
 .nav a .lbl{line-height:1}
 .nav a.create svg.i{width:30px;height:30px}
-.nav .count{position:absolute;top:6px;left:calc(50% + 6px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--like);color:#fff;font-size:10.5px;font-weight:800;display:grid;place-items:center}
+.nav .count{position:absolute;top:6px;left:calc(50% + 6px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--sun);color:var(--sun-ink)!important;color:#fff;font-size:10.5px;font-weight:800;display:grid;place-items:center}
 
 main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .col{width:100%;max-width:620px;margin:0 auto}
@@ -102,12 +109,17 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .topbar{display:none}
   body::before{background:var(--bg)}
   .app{display:grid;grid-template-columns:76px minmax(0,1fr)}
-  .nav{position:sticky;top:0;height:100vh;flex-direction:column;justify-content:flex-start;gap:4px;border-top:0;border-right:1px solid var(--line);padding:18px 10px;align-items:stretch}
+  .nav{position:sticky;top:0;height:100vh;overflow-y:auto;scrollbar-width:thin;flex-direction:column;justify-content:flex-start;gap:4px;border-top:0;background:var(--navy);color:var(--navy-ink);padding:18px 10px;align-items:stretch}
+  .nav a{color:var(--navy-muted)}
+  .nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.1)}
+  .nav a[aria-current="page"]::before{top:12px;bottom:12px;left:0;right:auto;width:3px;height:auto;border-radius:0 3px 3px 0}
+  .nav .wordmark small{color:var(--navy-muted)}
+  .nav .brand{color:#fff}
   .nav .nav-brand{display:flex;justify-content:center;margin:0 0 18px}
   .nav .nav-brand .wordmark{display:none}
   .nav a{flex:none;height:52px;border-radius:12px;font-size:0}
   .nav a .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-  .nav a:hover{background:var(--surface-2)}
+  .nav a:hover{background:rgba(255,255,255,.08);color:#fff}
   .nav .count{top:6px;left:auto;right:8px}
   main{padding-bottom:40px;min-width:0}
   .view-wrap{padding-top:24px}
@@ -117,13 +129,18 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .nav{padding:22px 14px}
   .nav .nav-brand{justify-content:flex-start;padding:4px 10px;margin-bottom:26px}
   .nav .nav-brand .wordmark{display:flex}
-  .nav a{flex-direction:row;justify-content:flex-start;gap:14px;padding:0 12px;font-size:15px;font-weight:600;color:var(--ink)}
+  .nav a{flex-direction:row;justify-content:flex-start;gap:14px;padding:0 12px;font-size:15px;font-weight:600;color:var(--navy-muted)}
+  .nav a{height:46px}
   .nav a .lbl{position:static;width:auto;height:auto;clip-path:none}
-  .nav a[aria-current="page"]{font-weight:800;background:var(--surface-2)}
-  .nav .count{position:static;margin-left:auto}
-  .nav .nav-foot{display:block;margin-top:auto;padding:12px;border-radius:12px;background:var(--surface-2);font-size:12.5px;color:var(--muted)}
-  .nav-foot strong{color:var(--ink);display:block;font-size:13px}
-  .nav-foot button{color:var(--link);font-weight:700;margin-top:4px;font-size:12.5px}
+  .nav a[aria-current="page"]{font-weight:800;color:#fff}
+  .nav .count{position:static;margin-left:auto;background:var(--sun);color:var(--sun-ink)}
+  .nav .nav-foot{display:block;margin-top:auto;padding:12px;border-radius:12px;background:rgba(255,255,255,.08);font-size:12.5px;color:var(--navy-muted)}
+  .nav-foot strong{color:#fff;display:block;font-size:13px}
+  .nav-foot button{color:var(--sun);font-weight:700;margin-top:4px;font-size:12.5px}
+  .nav .nav-secs{display:flex;flex-direction:column;gap:1px;margin:14px 0 14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14)}
+  .nav-secs .cad{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--sun);padding:10px 12px 4px}
+  .nav .nav-secs a{height:34px;font-size:13.5px;font-weight:600;gap:10px}
+  .nav-secs a i{width:8px;height:8px;border-radius:50%;background:var(--tone);flex:none}
   .home-grid{display:grid;grid-template-columns:minmax(0,620px) 320px;gap:40px;justify-content:center;padding-left:24px;padding-right:24px}
   .home-grid .col{margin:0}
   .aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px;align-self:start}
@@ -134,7 +151,7 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .stories::-webkit-scrollbar{display:none}
 @media (min-width:768px){.stories{border:1px solid var(--line);border-radius:var(--r);padding:16px}}
 .story{display:flex;flex-direction:column;align-items:center;gap:6px;width:74px;flex:none;font-size:11.5px;font-weight:600;color:var(--ink);text-align:center;line-height:1.2}
-.ring{width:68px;height:68px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#FFC72C,#1E8BC3,#0B3C6E,#FFC72C)}
+.ring{width:68px;height:68px;border-radius:50%;padding:3px;background:var(--sun)}
 .story.seen .ring{background:var(--line)}
 .ring span{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;border:3px solid var(--surface);background:var(--soft);color:var(--deep)}
 .ring svg.i{width:28px;height:28px}
@@ -142,7 +159,7 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 /* ---------- Abas da página inicial ---------- */
 .tabs{display:flex;gap:6px;padding:12px 0 4px}
 .tab{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:13.5px;color:var(--muted);min-height:36px}
-.tab[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.tab[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 
 /* ---------- Post ---------- */
 .feed{display:flex;flex-direction:column;gap:14px;padding-top:10px}
@@ -152,8 +169,7 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .post-h{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 14px}
 .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--deep);flex:none;box-shadow:inset 0 0 0 2px var(--tone)}
 .av svg.i{width:20px;height:20px}
-.av.brand-av{background:#0B3C6E;box-shadow:none}
-.av.brand-av b{font:italic 600 20px/1 var(--f-serif);color:#fff}
+.av.brand-av{background:#0B3C6E;color:#FFC72C;box-shadow:none}
 .who{min-width:0;flex:1;line-height:1.25}
 .who a{color:var(--ink);text-decoration:none;font-weight:700;font-size:14px}
 .who a:hover{text-decoration:underline}
@@ -184,7 +200,12 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .act[data-like][aria-pressed="true"]{color:var(--like)}
 .act[data-like][aria-pressed="true"] svg.i{fill:currentColor}
 .act[data-save][aria-pressed="true"] svg.i{fill:currentColor}
-.act.pop{animation:pop .3s ease-out}
+.act.pop svg{animation:pop .3s ease-out}
+.act.wide{width:auto;min-width:44px;padding:0 10px 0 8px;display:flex;align-items:center;gap:6px;text-decoration:none}
+.act .cnt{font-weight:700;font-size:14.5px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.sec-tag{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 8px;border-radius:8px;background:var(--soft);color:var(--deep);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-left:3px solid var(--tone)}
+.sec-tag svg.i{width:15px;height:15px}
+.sec-tag:hover{text-decoration:underline}
 @keyframes pop{50%{transform:scale(1.25)}}
 .post-b{padding:2px 14px 14px;display:flex;flex-direction:column;gap:6px}
 .likes{font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
@@ -283,6 +304,40 @@ main{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--soft);color:var(--deep);font-weight:700;font-size:13px;min-height:36px;border:1.5px solid transparent}
 .chip svg.i{width:16px;height:16px}
 .chip[aria-pressed="true"]{border-color:var(--tone);box-shadow:inset 0 0 0 1px var(--tone)}
+.chip[aria-current="page"]{border-color:var(--tone);box-shadow:inset 0 0 0 1px var(--tone)}
+a.chip{text-decoration:none}
+.sec-strip{background:var(--surface);border-bottom:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) 6px max(16px,env(safe-area-inset-left,0px))}
+@media (min-width:768px){.sec-strip{border:1px solid var(--line);border-radius:var(--r);margin-top:10px;padding:12px 16px 8px}}
+.ss-h{display:flex;justify-content:space-between;align-items:center}
+.ss-h strong{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--brand)}
+.ss-h a{font-weight:700;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:2px}
+.ss-h svg.i{width:16px;height:16px}
+.cad-block{padding:10px 0 18px}
+.cad-h{border-top:3px solid var(--brand);padding-top:10px;margin-bottom:10px}
+.cad-h h2{font:600 24px/1.15 var(--f-serif)}
+.cad-h p{color:var(--muted);font-size:14px}
+.sec-cards{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:640px){.sec-cards{grid-template-columns:1fr 1fr}}
+.sec-card{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 14px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--tone);border-radius:12px;text-decoration:none;color:var(--ink);min-width:0}
+.sec-card:hover{background:var(--soft)}
+.sec-card>svg.i{width:18px;height:18px;color:var(--muted)}
+.sec-ico{width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--deep);display:grid;place-items:center;flex:none}
+.sec-ico.big{width:58px;height:58px;background:var(--surface)}
+.sec-ico.big svg.i{width:30px;height:30px}
+.sec-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.sec-txt strong{font:600 18px/1.2 var(--f-serif)}
+.sec-txt small{color:var(--muted);font-size:13px}
+.sec-txt em{font-style:normal;color:var(--deep);font-size:12px;font-weight:700;margin-top:3px}
+.sec-banner{background:var(--soft);border-top:5px solid var(--tone);padding:14px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.sec-banner{border-radius:var(--r);padding:18px 20px}}
+.crumb{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--deep);text-decoration:none}
+.crumb svg.i{width:16px;height:16px}
+.sb-row{display:flex;gap:14px;align-items:center}
+.sb-row h1{font:600 clamp(26px,6vw,34px)/1.1 var(--f-serif);color:var(--deep);text-wrap:balance}
+.sb-row p{color:var(--ink);opacity:.85}
+.sb-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--deep)}
+.chips.sib{background:var(--surface);border-bottom:1px solid var(--line)}
+@media (min-width:640px){.chips.sib{background:none;border:0;padding-left:0;padding-right:0}}
 .sec-intro{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin:8px 0 12px}
 .sec-intro .av{border-radius:12px}
 .sec-intro strong{font:600 18px/1.2 var(--f-serif)}
@@ -459,7 +514,7 @@ dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:none
 dialog::backdrop{background:var(--scrim)}
 #story{width:100%;height:100%;margin:0}
 #story[open]{display:grid;place-items:center}
-.st-card{position:relative;width:min(100vw,calc(100dvh * 9 / 16));height:min(100dvh,calc(100vw * 16 / 9));max-height:100dvh;background:var(--st-bg,#0B3C6E);color:var(--st-ink,#fff);display:flex;flex-direction:column;overflow:hidden}
+.st-card{touch-action:pan-y;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative;width:min(100vw,calc(100dvh * 9 / 16));height:min(100dvh,calc(100vw * 16 / 9));max-height:100dvh;background:var(--st-bg,#0B3C6E);color:var(--st-ink,#fff);display:flex;flex-direction:column;overflow:hidden}
 @media (max-width:639px){.st-card{width:100vw;height:100dvh}}
 @media (min-width:640px){.st-card{height:min(88dvh,820px);width:calc(min(88dvh,820px) * 9 / 16);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.45)}}
 .st-bars{display:flex;gap:4px;padding:calc(10px + env(safe-area-inset-top,0px)) 12px 0}
@@ -519,13 +574,13 @@ dialog::backdrop{background:var(--scrim)}
 <a class="skip" href="#view">Pular para o conteúdo</a>
 <div class="app">
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Hipótese, página inicial">
-      <span class="mark" aria-hidden="true"><b>h</b><i></i></span>
-      <span class="wordmark"><strong>Hipótese</strong><small>Marista Pio X</small></span>
+    <a class="brand" href="#inicio" aria-label="Entre NAPs, página inicial">
+      <span class="mark" aria-hidden="true" data-ico="book"></span>
+      <span class="wordmark"><strong>Entre <b>NAPs</b></strong><small>Periódico digital · Marista Pio X</small></span>
     </a>
     <div class="acts">
       <a class="iconbtn" href="#edicao" aria-label="Sumário da edição" data-ico="book"></a>
-      <a class="iconbtn" href="#explorar" aria-label="Buscar" data-ico="search" data-focus-search></a>
+      <a class="iconbtn" href="#secoes" aria-label="Buscar" data-ico="search" data-focus-search></a>
     </div>
   </header>
   <nav class="nav" aria-label="Navegação principal" id="nav"></nav>
@@ -540,7 +595,7 @@ dialog::backdrop{background:var(--scrim)}
    Tudo roda no navegador. Curtidas, comentários, envios e decisões da
    curadoria ficam salvos só neste dispositivo (localStorage).
    ===================================================================== */
-const P = {nome:'Hipótese', sigla:'HIP', subtitulo:'Periódico de ciência e tecnologia dos estudantes', escola:'Colégio Marista Pio X', cidade:'João Pessoa (PB)', vol:'v. 1', num:'n. 0', edicao:'Edição piloto', mes:'nov. 2026', hoje:'2026-11-26'};
+const P = {nome:'Entre NAPs', sigla:'EN', subtitulo:'Periódico de ciência e tecnologia dos estudantes', escola:'Colégio Marista Pio X', cidade:'João Pessoa (PB)', vol:'v. 1', num:'n. 0', edicao:'Edição piloto', mes:'nov. 2026', hoje:'2026-11-26'};
 
 /* ---------- Ícones ---------- */
 const PATHS = {
@@ -633,16 +688,16 @@ const POSTS = [
  {id:'biologia', section:'diario-de-bordo', nap:'IV', format:'Reportagem', title:'Que visitantes aparecem na horta?', author:'Comitê NAP IV', credit:'2º ano do Ensino Médio · orientação de Biologia', date:'2026-11-19', question:'Quais organismos visitam a horta em diferentes horários?', deck:'O grupo montou um diário de observações de insetos e plantas em diferentes horários.', body:'Os estudantes desenharam um mapa da horta, escolheram áreas fixas para observação e registraram os organismos encontrados.\n\nAo voltar à sala, distinguiram observações diretas de hipóteses sobre quais visitantes poderiam participar da polinização.', skill:'EM13CNT301 · Formular perguntas, representar dados e justificar conclusões em investigações.', cover:'Vida na horta', symbol:'sprout', reactions:6, glossary:[['Polinização','Transporte do pólen entre flores, que permite a formação de frutos e sementes.']]},
  {id:'escuta', section:'fala-genio', nap:'III', format:'Entrevista', title:'Uma roda para escutar quem pensa diferente', author:'Comitê NAP III', credit:'7º ano · curadoria docente', date:'2026-11-18', deck:'Estudantes entrevistaram colegas sobre respeito a convicções e modos de celebrar.', body:'Em duplas, os estudantes elaboraram perguntas abertas sobre convivência, crenças e tradições. Cada grupo resumiu a fala do outro antes de compartilhar o próprio ponto de vista.\n\nAo final, a turma registrou acordos de escuta para entrevistas futuras.', skill:'EF07ER05 · Discutir estratégias de convivência ética e respeitosa entre as religiões.', cover:'Uma roda de escuta', symbol:'chat', reactions:10},
  {id:'mostra', section:'diario-de-bordo', nap:'IV', format:'Agenda', title:'Mostra de Projetos em preparação', author:'Comitê NAP IV', credit:'Pauta colaborativa dos quatro NAPs', date:'2026-11-17', deck:'As equipes preparam estações com experimentos, protótipos e textos para a comunidade escolar.', body:'A edição demonstrativa prevê estações de robótica, física, biologia e narrativas.\n\nCada equipe vai apresentar a pergunta inicial, um registro de bastidores e o que mudou entre a primeira tentativa e a versão exposta.', cover:'Mostra de Projetos', symbol:'calendar', reactions:5},
- {id:'artemis-imagens', section:'natureza-em-foco', nap:'IV', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'NASA abre ao público imagens da Lua feitas pela Artemis II', deck:'Fotos e anotações da tripulação mostram como se faz ciência durante um sobrevoo lunar.', body:'Em 7 de outubro de 2026, a NASA anunciou a disponibilização de imagens e dados científicos reunidos na missão Artemis II. Durante a passagem pela Lua, a tripulação se revezou para fotografar, anotar e descrever detalhes da superfície. Os registros estão disponíveis no arquivo público de ciência planetária da agência.\n\nQuem observa uma fotografia lunar pode começar comparando manchas claras, regiões escuras e bordas de crateras. Depois, vale conferir como o ângulo da iluminação muda o que aparece na imagem.', cover:'Imagens da Lua', symbol:'orbit', reactions:19, references:[{name:'NASA · Imagens e dados da Artemis II',url:'https://www.nasa.gov/blogs/artemis/2026/10/07/nasa-releases-artemis-ii-lunar-science-data-images/'}]},
- {id:'painel-solar', section:'como-funciona', nap:'III', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Como a luz vira eletricidade em um painel solar?', deck:'O caminho começa nas células do painel e passa pelo inversor antes de chegar a uma instalação elétrica.', body:'Uma célula fotovoltaica tem um material semicondutor, geralmente silício. Quando a luz chega à célula, parte de sua energia permite o surgimento de uma corrente elétrica. Muitas células ligadas formam um módulo.\n\nOs módulos entregam corrente contínua. Em sistemas conectados à rede, o inversor converte essa eletricidade em corrente alternada, compatível com a instalação.\n\nPara investigar em sala, imagine dois módulos iguais, um sob a luz e outro à sombra. Qual deles geraria mais eletricidade nas mesmas condições?', cover:'Luz em eletricidade', symbol:'sun', reactions:15, glossary:[['Semicondutor','Material cuja condução elétrica fica entre a de um condutor e a de um isolante, como o silício.'],['Inversor','Equipamento que converte corrente contínua em corrente alternada.']], references:[{name:'Empresa de Pesquisa Energética · Fontes de energia',url:'https://www.epe.gov.br/pt/abcdenergia/fontes-de-energia'},{name:'Ministério de Minas e Energia · Sistema fotovoltaico conectado à rede',url:'https://projeteee.mme.gov.br/equipamento/sistema-fotovoltaico-conectado-a-rede-sfcr-ou-on-grid/'}]},
- {id:'restinga-cabedelo', section:'ciencia-da-nossa-terra', nap:'III', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Guia apresenta as aves da Restinga de Cabedelo', deck:'A publicação do ICMBio ajuda a conhecer a fauna de uma floresta vizinha a João Pessoa.', body:'A Floresta Nacional da Restinga de Cabedelo protege ambientes costeiros como a restinga e o manguezal. O guia do ICMBio reúne informações sobre aves registradas na unidade e ajuda a transformar uma observação em uma investigação.\n\nComece por uma ave que você já viu perto de casa ou da escola. Anote onde ela estava, como se movia e que forma tinha o bico. Depois, compare seu registro com o guia e destaque quais pistas ajudaram na identificação e quais ainda deixam dúvida.', cover:'Aves de Cabedelo', symbol:'leaf', reactions:12, glossary:[['Restinga','Vegetação que cresce sobre solos arenosos do litoral.']], references:[{name:'ICMBio · Guia de aves da Restinga de Cabedelo',url:'https://www.gov.br/icmbio/pt-br/centrais-de-conteudo/publicacoes/guias-de-aves/guiadeavesdaflorestanacionaldarestingadecabedelosousaetal20231.pdf'}]},
- {id:'bertha-lutz', section:'pequenos-e-grandes-cientistas', nap:'II', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Bertha Lutz e as pistas que os anfíbios deixaram', deck:'A cientista brasileira estudou anfíbios no Museu Nacional e ajudou a documentar dezenas de espécies.', body:'Bertha Lutz ingressou no Museu Nacional em 1919. Na ciência, pesquisou plantas e anfíbios e descreveu mais de 80 espécies de anfíbios, segundo o Instituto Oswaldo Cruz. Sua trajetória também inclui a defesa de direitos das mulheres no Brasil.\n\nUma pergunta para pequenos cientistas: que características você anotaria para permitir que outra pessoa reconhecesse o animal que você observou? Desenhe, descreva e compare seus registros com os de uma dupla.', cover:'A ciência de Bertha Lutz', symbol:'atom', reactions:17, references:[{name:'Instituto Oswaldo Cruz · Histórias para inspirar futuras cientistas',url:'https://www.ioc.fiocruz.br/noticias/livro-conta-historias-de-pesquisadoras-para-inspirar-futuras-cientistas'}]},
- {id:'fases-ou-eclipse', section:'fato-ou-fake', nap:'II', format:'Checagem', verdict:'Fake', author:'Redação Hipótese', date:'2026-11-25', title:'As fases da Lua são a sombra da Terra?', deck:'Uma checagem para distinguir o que vemos toda semana do que acontece num eclipse lunar.', body:'Fake. Em cada fase vemos uma parte diferente da metade iluminada da Lua, porque ela se desloca ao redor da Terra. No eclipse lunar, a Terra fica alinhada entre o Sol e a Lua e sua sombra alcança a superfície lunar. Esse alinhamento acontece em algumas luas cheias.\n\nUma pista para checar a afirmação é comparar o desenho das posições do Sol, da Terra e da Lua nos dois casos.', cover:'Fases e eclipses', symbol:'orbit', reactions:21, glossary:[['Eclipse lunar','Fenômeno em que a sombra da Terra encobre total ou parcialmente a Lua.']], references:[{name:'NASA Science · Fases da Lua',url:'https://science.nasa.gov/moon/moon-phases/'},{name:'NASA Science · Eclipses e a Lua',url:'https://science.nasa.gov/moon/eclipses/'}]},
- {id:'perguntas-christina-koch', section:'fala-genio', nap:'IV', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'O que você perguntaria à astronauta Christina Koch?', deck:'A trajetória da engenheira que viajou ao redor da Lua inspira a primeira pauta de entrevista da seção.', body:'Christina Koch, engenheira e astronauta da NASA, foi especialista de missão na Artemis II em 2026. Durante a viagem, a NASA anunciou uma conversa da tripulação com jornalistas e abriu espaço para perguntas sobre a missão.\n\nO Fala, Gênio! convida as turmas a preparar perguntas abertas para suas próprias entrevistas. Como você percebeu que um teste precisava mudar? O que mais surpreendeu sua equipe? Os estudantes também podem ser entrevistados sobre seus projetos.', cover:'Pauta de entrevista', symbol:'mic', reactions:11, references:[{name:'NASA · Perfil de Christina Koch',url:'https://www.nasa.gov/people/christina-koch-2/'},{name:'NASA · Conversa da tripulação com a imprensa',url:'https://www.nasa.gov/news-release/nasa-to-host-media-call-with-artemis-ii-crew-on-way-home-from-moon/'}]},
- {id:'ceu-azul', section:'pergunte-ao-jornal', nap:'II', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Por que o céu é azul?', deck:'A primeira pergunta da seção passa pela luz do Sol e pelos gases que compõem a atmosfera.', body:'A luz do Sol reúne diversas cores. Ao atravessar a atmosfera, ela interage com as moléculas do ar e se espalha em várias direções. A luz azul se espalha com mais facilidade que a vermelha. Parte dela chega aos nossos olhos vinda de várias partes do céu.\n\nQue outra pergunta da sua turma merece uma investigação? Envie pelo story “Pergunte”. Conte de onde surgiu a dúvida, sem incluir informações pessoais.', cover:'A cor do céu', symbol:'spark', reactions:26, glossary:[['Espalhamento','Desvio da luz em várias direções ao interagir com partículas ou moléculas.']], references:[{name:'NASA Space Place · Por que o céu é azul?',url:'https://spaceplace.nasa.gov/blue-sky/en/'}]},
- {id:'desafio-sombras', section:'desafio-da-proxima-edicao', nap:'II', format:'Investigação', author:'Redação Hipótese', date:'2026-11-25', title:'Desafio: para onde a sombra foi?', deck:'Observe a sombra de um objeto no mesmo ponto em três horários e transforme os registros em um desenho ou tabela.', body:'Com orientação de um professor, escolha um objeto fixo em um ponto iluminado. Marque com giz onde termina sua sombra e registre o horário. Volte ao mesmo ponto em outros dois horários e repita o registro.\n\nCompare o comprimento e a direção das sombras. Envie à redação os horários, o desenho ou a tabela e uma pergunta que a observação deixou para a próxima edição. A proposta se inspira em uma atividade de relógio de Sol.', cover:'Diário de sombras', symbol:'sun', reactions:9, references:[{name:'NASA Science · Atividade de relógio de Sol',url:'https://science.nasa.gov/learn/heat/resource/create-a-sundial-activity/'}]},
- {id:'maristech-cbers', section:'maristech', nap:'IV', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Brasil e China avançam no projeto de um satélite de observação', deck:'A cooperação em torno do CBERS 06 aproxima a tecnologia espacial de perguntas sobre cidades, florestas e água.', body:'Em maio de 2026, o INPE recebeu representantes do centro chinês CRESDA para reuniões técnicas da missão CBERS 06. A cooperação faz parte de um programa de satélites de observação da Terra.\n\nUma forma de entender o trabalho é pensar em uma pergunta concreta: como um bairro mudou ao longo dos anos? Imagens da mesma região em datas diferentes ajudam a identificar alterações na vegetação, nas ruas e nas construções.', cover:'Satélites e mapas', symbol:'circuit', reactions:10, glossary:[['Sensoriamento remoto','Obtenção de informações sobre a superfície da Terra a partir de sensores a distância, como os de satélites.']], references:[{name:'INPE · Cooperação técnica para o CBERS 06',url:'https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/inpe-e-cresda-avancam-na-cooperacao-tecnica-para-a-missao-cbers-06/'}]},
- {id:'maos-limpas', section:'saude-em-dia', nap:'I', format:'Reportagem', author:'Redação Hipótese', date:'2026-11-25', title:'Mãos limpas antes do lanche', deck:'Água e sabonete ajudam a cuidar da saúde em momentos comuns da rotina escolar.', body:'O Ministério da Saúde orienta lavar as mãos com água limpa e sabão antes de comer e depois de usar o banheiro. Na lavagem, esfregue as palmas, o dorso e entre os dedos, enxágue e seque as mãos.\n\nA turma pode desenhar lembretes para a hora do lanche. Um bom cartaz mostra em que momento lavar as mãos e quais partes costumam ser esquecidas.', cover:'Água e sabonete', symbol:'heart', reactions:8, references:[{name:'Ministério da Saúde · Higienização antes das refeições',url:'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dtha/mitos-e-verdades/higienizacao-das-maos-antes-das'},{name:'Programa Saúde na Escola · Guia de bolso',url:'https://bvsms.saude.gov.br/bvs/publicacoes/guia_saude_escola_doen%C3%A7as_negligenciadas.pdf'}]}
+ {id:'artemis-imagens', section:'natureza-em-foco', nap:'IV', format:'Reportagem', author:'Comitê NAP IV', credit:'3º ano do Ensino Médio · orientação de Física', date:'2026-11-25', title:'NASA abre ao público imagens da Lua feitas pela Artemis II', deck:'Fotos e anotações da tripulação mostram como se faz ciência durante um sobrevoo lunar.', body:'Em 7 de outubro de 2026, a NASA anunciou a disponibilização de imagens e dados científicos reunidos na missão Artemis II. Durante a passagem pela Lua, a tripulação se revezou para fotografar, anotar e descrever detalhes da superfície. Os registros estão disponíveis no arquivo público de ciência planetária da agência.\n\nQuem observa uma fotografia lunar pode começar comparando manchas claras, regiões escuras e bordas de crateras. Depois, vale conferir como o ângulo da iluminação muda o que aparece na imagem.', cover:'Imagens da Lua', symbol:'orbit', reactions:19, references:[{name:'NASA · Imagens e dados da Artemis II',url:'https://www.nasa.gov/blogs/artemis/2026/10/07/nasa-releases-artemis-ii-lunar-science-data-images/'}]},
+ {id:'painel-solar', section:'como-funciona', nap:'III', format:'Reportagem', author:'Comitê NAP III', credit:'8º ano · orientação de Ciências', date:'2026-11-23', title:'Como a luz vira eletricidade em um painel solar?', deck:'O caminho começa nas células do painel e passa pelo inversor antes de chegar a uma instalação elétrica.', body:'Uma célula fotovoltaica tem um material semicondutor, geralmente silício. Quando a luz chega à célula, parte de sua energia permite o surgimento de uma corrente elétrica. Muitas células ligadas formam um módulo.\n\nOs módulos entregam corrente contínua. Em sistemas conectados à rede, o inversor converte essa eletricidade em corrente alternada, compatível com a instalação.\n\nPara investigar em sala, imagine dois módulos iguais, um sob a luz e outro à sombra. Qual deles geraria mais eletricidade nas mesmas condições?', cover:'Luz em eletricidade', symbol:'sun', reactions:15, glossary:[['Semicondutor','Material cuja condução elétrica fica entre a de um condutor e a de um isolante, como o silício.'],['Inversor','Equipamento que converte corrente contínua em corrente alternada.']], references:[{name:'Empresa de Pesquisa Energética · Fontes de energia',url:'https://www.epe.gov.br/pt/abcdenergia/fontes-de-energia'},{name:'Ministério de Minas e Energia · Sistema fotovoltaico conectado à rede',url:'https://projeteee.mme.gov.br/equipamento/sistema-fotovoltaico-conectado-a-rede-sfcr-ou-on-grid/'}]},
+ {id:'restinga-cabedelo', section:'ciencia-da-nossa-terra', nap:'III', format:'Reportagem', author:'Comitê NAP III', credit:'7º ano · orientação de Ciências e Geografia', date:'2026-11-22', title:'Guia apresenta as aves da Restinga de Cabedelo', deck:'A publicação do ICMBio ajuda a conhecer a fauna de uma floresta vizinha a João Pessoa.', body:'A Floresta Nacional da Restinga de Cabedelo protege ambientes costeiros como a restinga e o manguezal. O guia do ICMBio reúne informações sobre aves registradas na unidade e ajuda a transformar uma observação em uma investigação.\n\nComece por uma ave que você já viu perto de casa ou da escola. Anote onde ela estava, como se movia e que forma tinha o bico. Depois, compare seu registro com o guia e destaque quais pistas ajudaram na identificação e quais ainda deixam dúvida.', cover:'Aves de Cabedelo', symbol:'leaf', reactions:12, glossary:[['Restinga','Vegetação que cresce sobre solos arenosos do litoral.']], references:[{name:'ICMBio · Guia de aves da Restinga de Cabedelo',url:'https://www.gov.br/icmbio/pt-br/centrais-de-conteudo/publicacoes/guias-de-aves/guiadeavesdaflorestanacionaldarestingadecabedelosousaetal20231.pdf'}]},
+ {id:'bertha-lutz', section:'pequenos-e-grandes-cientistas', nap:'II', format:'Reportagem', author:'Comitê NAP II', credit:'5º ano · orientação de Ciências', date:'2026-11-20', title:'Bertha Lutz e as pistas que os anfíbios deixaram', deck:'A cientista brasileira estudou anfíbios no Museu Nacional e ajudou a documentar dezenas de espécies.', body:'Bertha Lutz ingressou no Museu Nacional em 1919. Na ciência, pesquisou plantas e anfíbios e descreveu mais de 80 espécies de anfíbios, segundo o Instituto Oswaldo Cruz. Sua trajetória também inclui a defesa de direitos das mulheres no Brasil.\n\nUma pergunta para pequenos cientistas: que características você anotaria para permitir que outra pessoa reconhecesse o animal que você observou? Desenhe, descreva e compare seus registros com os de uma dupla.', cover:'A ciência de Bertha Lutz', symbol:'atom', reactions:17, references:[{name:'Instituto Oswaldo Cruz · Histórias para inspirar futuras cientistas',url:'https://www.ioc.fiocruz.br/noticias/livro-conta-historias-de-pesquisadoras-para-inspirar-futuras-cientistas'}]},
+ {id:'fases-ou-eclipse', section:'fato-ou-fake', nap:'II', format:'Checagem', verdict:'Fake', author:'Comitê NAP II', credit:'5º ano · checagem revisada pela curadoria de Ciências', date:'2026-11-24', title:'As fases da Lua são a sombra da Terra?', deck:'Uma checagem para distinguir o que vemos toda semana do que acontece num eclipse lunar.', body:'Fake. Em cada fase vemos uma parte diferente da metade iluminada da Lua, porque ela se desloca ao redor da Terra. No eclipse lunar, a Terra fica alinhada entre o Sol e a Lua e sua sombra alcança a superfície lunar. Esse alinhamento acontece em algumas luas cheias.\n\nUma pista para checar a afirmação é comparar o desenho das posições do Sol, da Terra e da Lua nos dois casos.', cover:'Fases e eclipses', symbol:'orbit', reactions:21, glossary:[['Eclipse lunar','Fenômeno em que a sombra da Terra encobre total ou parcialmente a Lua.']], references:[{name:'NASA Science · Fases da Lua',url:'https://science.nasa.gov/moon/moon-phases/'},{name:'NASA Science · Eclipses e a Lua',url:'https://science.nasa.gov/moon/eclipses/'}]},
+ {id:'perguntas-christina-koch', section:'fala-genio', nap:'IV', format:'Reportagem', author:'Comitê NAP IV', credit:'9º ano · orientação de Língua Portuguesa', date:'2026-11-19', title:'O que você perguntaria à astronauta Christina Koch?', deck:'A trajetória da engenheira que viajou ao redor da Lua inspira a primeira pauta de entrevista da seção.', body:'Christina Koch, engenheira e astronauta da NASA, foi especialista de missão na Artemis II em 2026. Durante a viagem, a NASA anunciou uma conversa da tripulação com jornalistas e abriu espaço para perguntas sobre a missão.\n\nO Fala, Gênio! convida as turmas a preparar perguntas abertas para suas próprias entrevistas. Como você percebeu que um teste precisava mudar? O que mais surpreendeu sua equipe? Os estudantes também podem ser entrevistados sobre seus projetos.', cover:'Pauta de entrevista', symbol:'mic', reactions:11, references:[{name:'NASA · Perfil de Christina Koch',url:'https://www.nasa.gov/people/christina-koch-2/'},{name:'NASA · Conversa da tripulação com a imprensa',url:'https://www.nasa.gov/news-release/nasa-to-host-media-call-with-artemis-ii-crew-on-way-home-from-moon/'}]},
+ {id:'ceu-azul', section:'pergunte-ao-jornal', nap:'II', format:'Reportagem', author:'Professores de Ciências', credit:'Resposta a uma pergunta do 3º ano', date:'2026-11-24', title:'Por que o céu é azul?', deck:'A primeira pergunta da seção passa pela luz do Sol e pelos gases que compõem a atmosfera.', body:'A luz do Sol reúne diversas cores. Ao atravessar a atmosfera, ela interage com as moléculas do ar e se espalha em várias direções. A luz azul se espalha com mais facilidade que a vermelha. Parte dela chega aos nossos olhos vinda de várias partes do céu.\n\nQue outra pergunta da sua turma merece uma investigação? Envie pelo story “Pergunte”. Conte de onde surgiu a dúvida, sem incluir informações pessoais.', cover:'A cor do céu', symbol:'spark', reactions:26, glossary:[['Espalhamento','Desvio da luz em várias direções ao interagir com partículas ou moléculas.']], references:[{name:'NASA Space Place · Por que o céu é azul?',url:'https://spaceplace.nasa.gov/blue-sky/en/'}]},
+ {id:'desafio-sombras', section:'desafio-da-proxima-edicao', nap:'II', format:'Investigação', author:'Curadoria docente', credit:'Ciências da Natureza · NAPs II e III', date:'2026-11-25', title:'Desafio: para onde a sombra foi?', deck:'Observe a sombra de um objeto no mesmo ponto em três horários e transforme os registros em um desenho ou tabela.', body:'Com orientação de um professor, escolha um objeto fixo em um ponto iluminado. Marque com giz onde termina sua sombra e registre o horário. Volte ao mesmo ponto em outros dois horários e repita o registro.\n\nCompare o comprimento e a direção das sombras. Envie à redação os horários, o desenho ou a tabela e uma pergunta que a observação deixou para a próxima edição. A proposta se inspira em uma atividade de relógio de Sol.', cover:'Diário de sombras', symbol:'sun', reactions:9, references:[{name:'NASA Science · Atividade de relógio de Sol',url:'https://science.nasa.gov/learn/heat/resource/create-a-sundial-activity/'}]},
+ {id:'maristech-cbers', section:'maristech', nap:'IV', format:'Reportagem', author:'Comitê NAP IV', credit:'1º ano do Ensino Médio · Educação Tecnológica', date:'2026-11-18', title:'Brasil e China avançam no projeto de um satélite de observação', deck:'A cooperação em torno do CBERS 06 aproxima a tecnologia espacial de perguntas sobre cidades, florestas e água.', body:'Em maio de 2026, o INPE recebeu representantes do centro chinês CRESDA para reuniões técnicas da missão CBERS 06. A cooperação faz parte de um programa de satélites de observação da Terra.\n\nUma forma de entender o trabalho é pensar em uma pergunta concreta: como um bairro mudou ao longo dos anos? Imagens da mesma região em datas diferentes ajudam a identificar alterações na vegetação, nas ruas e nas construções.', cover:'Satélites e mapas', symbol:'circuit', reactions:10, glossary:[['Sensoriamento remoto','Obtenção de informações sobre a superfície da Terra a partir de sensores a distância, como os de satélites.']], references:[{name:'INPE · Cooperação técnica para o CBERS 06',url:'https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/inpe-e-cresda-avancam-na-cooperacao-tecnica-para-a-missao-cbers-06/'}]},
+ {id:'maos-limpas', section:'saude-em-dia', nap:'I', format:'Reportagem', author:'Professoras do NAP I', credit:'Educação Infantil · Programa Saúde na Escola', date:'2026-11-21', title:'Mãos limpas antes do lanche', deck:'Água e sabonete ajudam a cuidar da saúde em momentos comuns da rotina escolar.', body:'O Ministério da Saúde orienta lavar as mãos com água limpa e sabão antes de comer e depois de usar o banheiro. Na lavagem, esfregue as palmas, o dorso e entre os dedos, enxágue e seque as mãos.\n\nA turma pode desenhar lembretes para a hora do lanche. Um bom cartaz mostra em que momento lavar as mãos e quais partes costumam ser esquecidas.', cover:'Água e sabonete', symbol:'heart', reactions:8, references:[{name:'Ministério da Saúde · Higienização antes das refeições',url:'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dtha/mitos-e-verdades/higienizacao-das-maos-antes-das'},{name:'Programa Saúde na Escola · Guia de bolso',url:'https://bvsms.saude.gov.br/bvs/publicacoes/guia_saude_escola_doen%C3%A7as_negligenciadas.pdf'}]}
 ];
 /* Legendas embutidas: viram um arquivo temporário no navegador. */
 const CAPTIONS = {agua:`WEBVTT
@@ -724,7 +779,7 @@ const canPublish = () => S.role==='comite'||S.role==='curadoria';
 
 /* ---------- Peças de interface ---------- */
 function avatar(p){
-  if(isRedacao(p)) return `<span class="av brand-av" aria-hidden="true"><b>h</b></span>`;
+  if(isRedacao(p)) return `<span class="av brand-av" aria-hidden="true">${ico('book')}</span>`;
   const n=napOf(p.nap); return `<span class="av c-${n.cor}" aria-hidden="true">${ico(n.icon)}</span>`;
 }
 function authorLink(p){ return isRedacao(p)?`<a href="#edicao">${esc(p.author)}</a>`:`<a href="#nap-${p.nap.toLowerCase()}">${esc(p.author)}</a>`; }
@@ -742,29 +797,28 @@ function postCard(p){
   const s=secOf(p.section), n=napOf(p.nap), liked=S.likes.includes(p.id), saved=S.saves.includes(p.id), c=visibleComments(p.id).length;
   const followBtn = !isRedacao(p) && !S.follows.includes(p.nap) ? `<button class="follow" data-follow="${p.nap}" aria-pressed="false">Seguir</button>`:'';
   return `<article class="post c-${s?s.cor:n.cor}" aria-labelledby="t-${esc(p.id)}">
-    <header class="post-h">${avatar(p)}<div class="who">${authorLink(p)}<small>${s?`<a href="#secao-${s.id}">${esc(s.titulo)}</a> · `:''}${esc(n.nome)}</small></div>${followBtn}</header>
+    <header class="post-h">${avatar(p)}<div class="who">${authorLink(p)}<small>${esc(n.nome)} · ${esc(n.faixa)}</small></div>${followBtn}</header>
     <div class="media" data-tap="${esc(p.id)}">${coverMarkup(p)}${mediaBadge(p)}<span class="burst" aria-hidden="true"><svg viewBox="0 0 24 24">${PATHS.heart}</svg></span></div>
     <div class="actions">
-      <button class="act" data-like="${esc(p.id)}" aria-pressed="${liked}" aria-label="${liked?'Descurtir':'Curtir'}">${ico('heart')}</button>
-      <button class="act" data-comments="${esc(p.id)}" aria-label="Comentários">${ico('chat')}</button>
+      <button class="act wide" data-like="${esc(p.id)}" aria-pressed="${liked}" aria-label="${liked?'Descurtir':'Curtir'}, ${likeCount(p)} curtidas">${ico('heart')}<span class="cnt" data-likes="${esc(p.id)}">${likeCount(p)}</span></button>
+      <button class="act wide" data-comments="${esc(p.id)}" aria-label="${c} comentários">${ico('chat')}<span class="cnt">${c}</span></button>
       <button class="act" data-share="${esc(p.id)}" aria-label="Compartilhar">${ico('send')}</button>
       <span class="sp"></span>
       <button class="act" data-save="${esc(p.id)}" aria-pressed="${saved}" aria-label="${saved?'Remover dos salvos':'Salvar'}">${ico('bookmark')}</button>
     </div>
     <div class="post-b">
-      <span class="likes" data-likes="${esc(p.id)}">${likeCount(p)} curtida${likeCount(p)===1?'':'s'}</span>
+      ${s?`<a class="sec-tag" href="#secao-${s.id}">${ico(s.icon)}${esc(s.titulo)}</a>`:''}
       <h3 id="t-${esc(p.id)}"><a href="#materia-${esc(p.id)}">${esc(p.title)}</a></h3>
       <p class="deck">${esc(p.deck)}</p>
       <div class="post-meta">${p.approvedNow&&p.date===P.hoje?'<span class="pill new-flag">Novo</span>':''}<span>${esc(p.format)}</span><span>${ico('clock','style="width:14px;height:14px;vertical-align:-2px"')} ${readMin(p)} min</span><span>${esc(relDate(p.date))}</span></div>
       <a class="readlink" href="#materia-${esc(p.id)}">Ler matéria ${ico('right')}</a>
-      ${c?`<button class="linkbtn" data-comments="${esc(p.id)}">Ver ${c===1?'o comentário':`os ${c} comentários`}</button>`:''}
     </div>
   </article>`;
 }
 function coverPost(){
   const total=POSTS.length, secoes=new Set(POSTS.map(p=>p.section)).size;
   return `<article class="post" aria-label="Capa da edição piloto">
-    <header class="post-h"><span class="av brand-av" aria-hidden="true"><b>h</b></span><div class="who"><a href="#edicao">Redação ${P.nome}</a><small>Capa · ${P.edicao}</small></div></header>
+    <header class="post-h"><span class="av brand-av" aria-hidden="true">${ico('book')}</span><div class="who"><a href="#edicao">Redação ${P.nome}</a><small>Capa · ${P.edicao}</small></div></header>
     <div class="media" style="aspect-ratio:1/1">
       <div class="slides" id="cover-slides" aria-roledescription="carrossel" aria-label="Capa da edição">
         <section class="slide" aria-roledescription="slide" aria-label="1 de 4"><img src="media/robo.webp" alt="" loading="eager"><span class="shade"></span>
@@ -774,7 +828,7 @@ function coverPost(){
           <a class="cta" href="#edicao">Ver sumário ${ico('right')}</a></div></section>
         <section class="slide" aria-roledescription="slide" aria-label="3 de 4"><img src="media/agua.webp" alt="" loading="lazy"><span class="shade"></span>
           <div class="sc"><span class="kick">Enquete aberta</span><h2>Você escolhe a pauta <em>de janeiro.</em></h2><button class="cta" data-story="enquete">Votar agora ${ico('poll')}</button></div></section>
-        <section class="slide plain" aria-roledescription="slide" aria-label="4 de 4" style="background:#FFC72C;color:#2A2000"><div class="sc"><span class="kick" style="color:#0B3C6E">Lançamento · janeiro de 2027</span><h2 style="color:#0B3C6E">${P.nome} n. 1 chega em janeiro.</h2><p style="color:#3A3000">A primeira edição regular destaca Ciências da Natureza e Educação Tecnológica, com projetos dos estudantes.</p></div></section>
+        <section class="slide plain" aria-roledescription="slide" aria-label="4 de 4" style="background:#FFC72C;color:#2A2000"><div class="sc"><span class="kick" style="color:#0B3C6E">Lançamento · janeiro de 2027</span><h2 style="color:#0B3C6E">O Entre NAPs <em style="color:#0B3C6E;font-style:italic">vai começar.</em></h2><p style="color:#3A3000">A primeira edição regular destaca Ciências da Natureza e Educação Tecnológica, com projetos dos estudantes.</p></div></section>
       </div>
       <span class="slide-count" id="cover-count">1/4</span>
       <button class="slide-nav prev" data-slide="-1" aria-label="Slide anterior" hidden>${ico('left')}</button>
@@ -798,11 +852,12 @@ function storiesRow(){
 /* ---------- Navegação ---------- */
 function renderNav(){
   const q=queueItems().length;
-  const items=[['inicio','Início','home'],['explorar','Explorar','compass'],['criar',canPublish()?'Publicar':'Sugerir','plus'],['edicao','Edição','book'],['perfil','Perfil','user']];
+  const items=[['inicio','Início','home'],['secoes','Seções','grid'],['criar',canPublish()?'Publicar':'Sugerir','plus'],['edicao','Edição','book'],['perfil','Perfil','user']];
   if(S.role==='curadoria') items.splice(4,0,['curadoria','Curadoria','shield']);
-  const active = V.view==='materia'||V.view==='nap' ? V.lastTab : V.view;
-  $('#nav').innerHTML = `<a class="nav-brand brand" href="#inicio" aria-label="${P.nome}, página inicial"><span class="mark" aria-hidden="true"><b>h</b><i></i></span><span class="wordmark"><strong>${P.nome}</strong><small>Marista Pio X</small></span></a>`+
+  const active = V.view==='materia'||V.view==='nap' ? V.lastTab : V.view==='secao' ? 'secoes' : V.view;
+  $('#nav').innerHTML = `<a class="nav-brand brand" href="#inicio" aria-label="${P.nome}, página inicial"><span class="mark" aria-hidden="true">${ico('book')}</span><span class="wordmark"><strong>Entre <b>NAPs</b></strong><small>Marista Pio X</small></span></a>`+
     items.filter(([id])=>!(id==='curadoria'&&window.innerWidth<768)).map(([id,l,i])=>`<a href="#${id}" class="${id==='criar'?'create':''}" ${active===id?'aria-current="page"':''}>${ico(i)}<span class="lbl">${l}</span>${id==='curadoria'&&q?`<span class="count">${q}</span>`:''}</a>`).join('')+
+    `<div class="nav-secs">${CADERNOS.map(c=>`<span class="cad">${esc(c.nome)}</span>${SECOES.filter(x=>x.cad===c.id).map(x=>`<a href="#secao-${x.id}" class="c-${x.cor}" ${V.view==='secao'&&V.arg===x.id?'aria-current="page"':''}><i></i>${esc(x.titulo)}</a>`).join('')}`).join('')}</div>`+
     `<div class="nav-foot"><strong>Prévia · perfil ${ROLES[S.role].nome}${S.role==='comite'?' NAP '+S.roleNap:''}</strong>Troque o perfil para testar publicação e curadoria.<br><button data-goto="perfil">Trocar perfil</button></div>`;
 }
 
@@ -814,13 +869,14 @@ function viewHome(){
   const aside = asideMarkup();
   return `<div class="home-grid view-wrap"><div class="col">
     ${storiesRow()}
+    ${sectionStrip()}
     <div class="gutter" style="padding-left:max(12px,env(safe-area-inset-left,0px))"><div class="tabs" role="group" aria-label="Filtrar feed">
       <button class="tab" data-feed="destaques" aria-pressed="${V.feedTab==='destaques'}">Destaques</button>
       <button class="tab" data-feed="seguindo" aria-pressed="${V.feedTab==='seguindo'}">Seguindo · ${S.follows.length} NAP${S.follows.length===1?'':'s'}</button>
     </div></div>
     <div class="feed">
       ${V.feedTab==='destaques'?coverPost():''}
-      ${shown.length?shown.map(postCard).join(''):`<div class="empty gutter">Você ainda não segue nenhum NAP. Abra <a href="#explorar">Explorar</a> e toque em “Seguir” no perfil de um NAP.</div>`}
+      ${shown.length?shown.map(postCard).join(''):`<div class="empty gutter">Você ainda não segue nenhum NAP. Abra <a href="#secoes">Seções</a> e toque em “Seguir” no perfil de um NAP.</div>`}
     </div>
     ${list.length>V.limit?`<div class="more"><button class="btn ghost" data-more>Carregar mais publicações</button></div>`:shown.length?`<p class="note" style="text-align:center;padding:18px 16px">Você chegou ao fim da edição. <a href="#edicao">Ver o sumário completo</a></p>`:''}
   </div><aside class="aside" aria-label="Sobre a edição">${aside}</aside></div>`;
@@ -833,29 +889,42 @@ function asideMarkup(){
   <section class="card"><span class="eyebrow">Perfis dos NAPs</span><div class="mini-list">${NAPS.map(n=>`<div class="mini-item c-${n.cor}"><span class="av" aria-hidden="true">${ico(n.icon)}</span><a class="grow" href="#nap-${n.id.toLowerCase()}" style="text-decoration:none;color:var(--ink)"><strong>${n.nome}</strong><small>${esc(n.faixa)}</small></a><button class="follow" data-follow="${n.id}" aria-pressed="${S.follows.includes(n.id)}">${S.follows.includes(n.id)?'Seguindo':'Seguir'}</button></div>`).join('')}</div></section>
   <p class="aside-foot">${P.nome} · ${P.subtitulo} do ${P.escola}, ${P.cidade}. <a href="#edicao">Expediente e política editorial</a></p>`;
 }
-function viewExplore(){
-  const e=V.explore, q=e.q.trim();
-  let body;
-  if(q){
-    const norm=t=>t.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[̀-ͯ]/g,'');
-    const nq=norm(q);
-    const res=allPosts().filter(p=>norm([p.title,p.deck,p.body,p.author,secOf(p.section)?.titulo,p.format,napOf(p.nap).nome,(p.glossary||[]).map(g=>g[0]).join(' ')].join(' ')).includes(nq));
-    body = `<p class="note" style="margin-bottom:8px">${res.length} resultado${res.length===1?'':'s'} para “${esc(q)}”</p><div class="results">${res.map(p=>{const s=secOf(p.section);return `<a class="result c-${s?s.cor:'brand'}" href="#materia-${esc(p.id)}"><span class="thumb">${coverMarkup(p)}</span><span style="min-width:0"><strong>${hl(p.title,q)}</strong><small>${esc(s?s.titulo:'')} · ${esc(p.author)} · ${readMin(p)} min</small></span></a>`;}).join('')||'<div class="empty">Nada encontrado. Tente “Lua”, “água” ou “robô”.</div>'}</div>`;
-  } else {
-    const secs = e.cad?SECOES.filter(s=>s.cad===e.cad):[];
-    const sec = e.sec?secOf(e.sec):null;
-    let list=allPosts();
-    if(e.cad) list=list.filter(p=>secOf(p.section)?.cad===e.cad);
-    if(e.sec) list=list.filter(p=>p.section===e.sec);
-    body = `<div class="naps-row">${NAPS.map(n=>`<a class="nap-chip c-${n.cor}" href="#nap-${n.id.toLowerCase()}"><span class="av" aria-hidden="true">${ico(n.icon)}</span><strong>${n.nome}</strong><small>${esc(n.faixa)}</small></a>`).join('')}</div>
-    <div class="seg" role="group" aria-label="Cadernos"><button class="tab" data-cad="" aria-pressed="${!e.cad}">Tudo</button>${CADERNOS.map(c=>`<button class="tab" data-cad="${c.id}" aria-pressed="${e.cad===c.id}">${esc(c.nome)}</button>`).join('')}</div>
-    ${e.cad?`<div class="chips" role="group" aria-label="Seções de ${esc(cadOf(e.cad).nome)}">${secs.map(s=>`<button class="chip c-${s.cor}" data-sec="${s.id}" aria-pressed="${e.sec===s.id}">${ico(s.icon)}${esc(s.titulo)}</button>`).join('')}</div>`:''}
-    ${sec?`<div class="sec-intro c-${sec.cor}"><span class="av" aria-hidden="true">${ico(sec.icon)}</span><div><strong>${esc(sec.titulo)}</strong><p>${esc(sec.desc)}</p></div></div>`:e.cad?`<p class="note" style="margin:6px 0 10px">${esc(cadOf(e.cad).desc)}</p>`:'<div style="height:10px"></div>'}
-    ${list.length?`<div class="grid">${list.map(tile).join('')}</div>`:'<div class="empty">Esta seção ainda não tem matérias publicadas.</div>'}`;
-  }
-  return `<div class="col gutter view-wrap"><div class="page-h"><h1>Explorar</h1><p>Busque por assunto ou navegue pelos cadernos e seções.</p></div>
-    <label class="search"><span class="sr">Buscar no periódico</span>${ico('search')}<input id="q" type="search" placeholder="Buscar matérias, seções, termos do glossário" value="${esc(e.q)}" autocomplete="off"></label>
-    <div id="explore-body">${body}</div></div>`;
+function secCount(id){ return allPosts().filter(p=>p.section===id).length; }
+function secCard(sc){
+  const n=secCount(sc.id), last=allPosts().find(p=>p.section===sc.id);
+  return `<a class="sec-card c-${sc.cor}" href="#secao-${sc.id}"><span class="sec-ico" aria-hidden="true">${ico(sc.icon)}</span><span class="sec-txt"><strong>${esc(sc.titulo)}</strong><small>${esc(sc.desc)}</small><em>${n} matéria${n===1?'':'s'}${last?' · última '+esc(relDate(last.date)):''}</em></span>${ico('right')}</a>`;
+}
+function sectionsIndex(){
+  return CADERNOS.map(c=>`<section class="cad-block" aria-labelledby="cad-${c.id}"><header class="cad-h"><h2 id="cad-${c.id}">${esc(c.nome)}</h2><p>${esc(c.desc)}</p></header><div class="sec-cards">${SECOES.filter(x=>x.cad===c.id).map(secCard).join('')}</div></section>`).join('')+
+  `<section class="cad-block" aria-labelledby="cad-naps"><header class="cad-h"><h2 id="cad-naps">Perfis dos NAPs</h2><p>Siga o NAP da sua turma para ver as publicações dele na aba Seguindo.</p></header><div class="naps-row">${NAPS.map(n=>`<a class="nap-chip c-${n.cor}" href="#nap-${n.id.toLowerCase()}"><span class="av" aria-hidden="true">${ico(n.icon)}</span><strong>${n.nome}</strong><small>${esc(n.faixa)}</small></a>`).join('')}</div></section>`;
+}
+function searchResults(q){
+  const norm=t=>t.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const nq=norm(q);
+  const secs=SECOES.filter(x=>norm(x.titulo+' '+x.desc).includes(nq));
+  const res=allPosts().filter(p=>norm([p.title,p.deck,p.body,p.author,secOf(p.section)?.titulo,p.format,napOf(p.nap).nome,(p.glossary||[]).map(g=>g[0]).join(' ')].join(' ')).includes(nq));
+  return `${secs.length?`<div class="sec-cards" style="margin-bottom:14px">${secs.map(secCard).join('')}</div>`:''}<p class="note" style="margin-bottom:8px">${res.length} matéria${res.length===1?'':'s'} para “${esc(q)}”</p><div class="results">${res.map(p=>{const x=secOf(p.section);return `<a class="result c-${x?x.cor:'brand'}" href="#materia-${esc(p.id)}"><span class="thumb">${coverMarkup(p)}</span><span style="min-width:0"><strong>${hl(p.title,q)}</strong><small>${esc(x?x.titulo:'')} · ${esc(p.author)} · ${readMin(p)} min</small></span></a>`;}).join('')||'<div class="empty">Nada encontrado. Tente “Lua”, “água” ou “robô”.</div>'}</div>`;
+}
+function viewSections(){
+  const q=V.explore.q.trim();
+  return `<div class="col gutter view-wrap" style="max-width:860px"><div class="page-h"><h1>Seções</h1><p>O periódico organizado em três cadernos. Escolha uma seção ou busque por assunto.</p></div>
+    <label class="search"><span class="sr">Buscar no periódico</span>${ico('search')}<input id="q" type="search" placeholder="Buscar matérias, seções e termos do glossário" value="${esc(V.explore.q)}" autocomplete="off"></label>
+    <div id="explore-body">${q?searchResults(q):sectionsIndex()}</div></div>`;
+}
+const SEC_CTA = {'fato-ou-fake':['quiz','Jogar Fato ou Fake?'],'pergunte-ao-jornal':['pergunte','Enviar uma pergunta'],'desafio-da-proxima-edicao':['desafio','Ver o desafio']};
+function viewSection(id){
+  const sc=secOf(id); if(!sc) return viewSections();
+  const c=cadOf(sc.cad), list=allPosts().filter(p=>p.section===id), sibs=SECOES.filter(x=>x.cad===sc.cad), cta=SEC_CTA[id];
+  return `<div class="home-grid view-wrap"><div class="col">
+    <header class="sec-banner c-${sc.cor}"><a class="crumb" href="#secoes">${ico('left')} Seções · ${esc(c.nome)}</a>
+      <div class="sb-row"><span class="sec-ico big" aria-hidden="true">${ico(sc.icon)}</span><div style="min-width:0"><h1>${esc(sc.titulo)}</h1><p>${esc(sc.desc)}</p></div></div>
+      <div class="sb-meta"><span>${list.length} matéria${list.length===1?'':'s'} nesta edição</span>${cta?`<button class="btn primary sm" data-story="${cta[0]}">${esc(cta[1])}</button>`:`<a class="btn ghost sm" href="#criar">${canPublish()?'Publicar nesta seção':'Sugerir uma pauta'}</a>`}</div></header>
+    <div class="chips sib gutter" role="group" aria-label="Outras seções de ${esc(c.nome)}">${sibs.map(x=>`<a class="chip c-${x.cor}" href="#secao-${x.id}" ${x.id===id?'aria-current="page"':''}>${ico(x.icon)}${esc(x.titulo)}</a>`).join('')}</div>
+    <div class="feed">${list.map(postCard).join('')||'<div class="empty">Esta seção ainda não tem matérias publicadas.</div>'}</div>
+  </div><aside class="aside" aria-label="Sobre a edição">${asideMarkup()}</aside></div>`;
+}
+function sectionStrip(){
+  return `<nav class="sec-strip" aria-label="Seções do periódico"><div class="ss-h"><strong>Seções</strong><a href="#secoes">Ver todas ${ico('right')}</a></div><div class="chips">${SECOES.map(x=>`<a class="chip c-${x.cor}" href="#secao-${x.id}">${ico(x.icon)}${esc(x.titulo)}</a>`).join('')}</div></nav>`;
 }
 function hl(t,q){ const i=t.toLocaleLowerCase('pt-BR').indexOf(q.toLocaleLowerCase('pt-BR')); return i<0?esc(t):esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+q.length))+'</mark>'+esc(t.slice(i+q.length)); }
 function tile(p){
@@ -895,9 +964,8 @@ function viewArticle(id){
       </div>
     </div>
     <div class="art-actions">
-      <button class="act" data-like="${esc(p.id)}" aria-pressed="${liked}" aria-label="${liked?'Descurtir':'Curtir'}">${ico('heart')}</button>
-      <span class="likes" data-likes="${esc(p.id)}">${likeCount(p)}</span>
-      <a class="act" href="#comentarios" data-jump="comentarios" aria-label="Ir para comentários">${ico('chat')}</a>
+      <button class="act wide" data-like="${esc(p.id)}" aria-pressed="${liked}" aria-label="${liked?'Descurtir':'Curtir'}, ${likeCount(p)} curtidas">${ico('heart')}<span class="cnt" data-likes="${esc(p.id)}">${likeCount(p)}</span></button>
+      <a class="act wide" href="#comentarios" data-jump="comentarios" aria-label="${visibleComments(p.id).length} comentários, ir para comentários">${ico('chat')}<span class="cnt">${visibleComments(p.id).length}</span></a>
       <button class="act" data-share="${esc(p.id)}" aria-label="Compartilhar">${ico('send')}</button>
       <span class="sp" style="flex:1"></span>
       <button class="act" data-save="${esc(p.id)}" aria-pressed="${saved}" aria-label="${saved?'Remover dos salvos':'Salvar'}">${ico('bookmark')}</button>
@@ -1032,14 +1100,15 @@ function route(){
   let view='inicio', arg='';
   if(h.startsWith('materia-')){view='materia';arg=h.slice(8);}
   else if(h.startsWith('nap-')){view='nap';arg=h.slice(4).toUpperCase();}
-  else if(h.startsWith('secao-')){const s=secOf(h.slice(6)); view='explorar'; if(s){V.explore={cad:s.cad,sec:s.id,q:''};}}
+  else if(h.startsWith('secao-')){view='secao';arg=h.slice(6);}
+  else if(h==='explorar') view='secoes';
   else if(h==='sobre'||h==='expediente'){view='edicao';arg='expediente';}
-  else if(['inicio','explorar','edicao','perfil','criar','curadoria'].includes(h)) view=h;
+  else if(['inicio','secoes','edicao','perfil','criar','curadoria'].includes(h)) view=h;
   else if(h==='comentarios'){ $('#comentarios')?.scrollIntoView({behavior:'smooth'}); return; }
-  V.view=view;
+  V.view=view; V.arg=arg;
   document.body.classList.toggle('reading',view==='materia');
-  if(!['materia','nap'].includes(view)) V.lastTab=view;
-  const html = view==='materia'?viewArticle(arg):view==='nap'?viewNap(arg):view==='explorar'?viewExplore():view==='edicao'?viewEdition():view==='perfil'?viewProfile():view==='criar'?viewCreate():view==='curadoria'?viewQueue():viewHome();
+  if(!['materia','nap'].includes(view)) V.lastTab=view==='secao'?'secoes':view;
+  const html = view==='materia'?viewArticle(arg):view==='nap'?viewNap(arg):view==='secoes'?viewSections():view==='secao'?viewSection(arg):view==='edicao'?viewEdition():view==='perfil'?viewProfile():view==='criar'?viewCreate():view==='curadoria'?viewQueue():viewHome();
   $('#view').innerHTML=html;
   renderNav();
   hydrateIcons(document);
@@ -1051,7 +1120,7 @@ function rerender(){ const y=window.scrollY; const v=V.view; V.view='__'; const 
 function hydrateIcons(root){ root.querySelectorAll('[data-ico]').forEach(el=>{ if(!el.firstChild) el.innerHTML=ico(el.dataset.ico); }); }
 function afterRender(view){
   if(view==='inicio') initCover();
-  if(view==='explorar'){ const q=$('#q'); q.addEventListener('input',()=>{V.explore.q=q.value; const tmp=document.createElement('div'); tmp.innerHTML=viewExplore(); $('#explore-body').replaceWith(tmp.querySelector('#explore-body'));}); if(V.focusSearch){q.focus();V.focusSearch=false;} }
+  if(view==='secoes'){ const q=$('#q'); q.addEventListener('input',()=>{V.explore.q=q.value; const v=q.value.trim(); $('#explore-body').innerHTML=v?searchResults(v):sectionsIndex();}); if(V.focusSearch){q.focus();V.focusSearch=false;} }
   if(view==='criar'&&canPublish()) initComposer();
 }
 function initCover(){
@@ -1069,8 +1138,8 @@ function toggle(list,id){ const i=S[list].indexOf(id); if(i<0) S[list].push(id);
 function like(id, force){
   const on = force ? (S.likes.includes(id)?true:toggle('likes',id)) : toggle('likes',id);
   const p=postById(id);
-  $$(`[data-like="${CSS.escape(id)}"]`).forEach(b=>{b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Descurtir':'Curtir');b.classList.remove('pop');void b.offsetWidth;if(on)b.classList.add('pop');});
-  $$(`[data-likes="${CSS.escape(id)}"]`).forEach(el=>{const n=likeCount(p); el.textContent=el.closest('.art-actions')?n:`${n} curtida${n===1?'':'s'}`;});
+  $$(`[data-like="${CSS.escape(id)}"]`).forEach(b=>{b.setAttribute('aria-pressed',on);b.classList.remove('pop');void b.offsetWidth;if(on)b.classList.add('pop');});
+  $$(`[data-likes="${CSS.escape(id)}"]`).forEach(el=>{el.textContent=likeCount(p); el.closest('button')?.setAttribute('aria-label',`${on?'Descurtir':'Curtir'}, ${likeCount(p)} curtidas`);});
 }
 let tapT=null, tapId=null;
 document.addEventListener('click', e=>{
@@ -1089,8 +1158,6 @@ document.addEventListener('click', e=>{
   if(d.story!==undefined){ e.preventDefault(); return openStory(d.story); }
   if(d.feed){ V.feedTab=d.feed; V.limit=6; rerender(); return; }
   if(d.more!==undefined){ V.limit+=6; rerender(); return; }
-  if(d.cad!==undefined){ V.explore.cad=d.cad; V.explore.sec=''; rerender(); return; }
-  if(d.sec){ V.explore.sec=V.explore.sec===d.sec?'':d.sec; rerender(); return; }
   if(d.naptab){ V.napTab=d.naptab; rerender(); return; }
   if(d.proftab){ V.profTab=d.proftab; rerender(); return; }
   if(d.role){ S.role=d.role; save(); toast(`Agora você vê a prévia como ${ROLES[d.role].nome}`); rerender(); return; }
@@ -1233,18 +1300,27 @@ function drawStory(){
     <div class="st-bars" aria-hidden="true">${pages.map((_,k)=>`<i class="${k<ST.i?'done':k===ST.i?'done':''}"></i>`).join('')}</div>
     <div class="st-head"><span class="av" aria-hidden="true">${ico(s.icon)}</span><strong>${esc(s.label)}</strong><button class="iconbtn" data-close-story aria-label="Fechar story">${ico('close')}</button></div>
     <div class="st-body" tabindex="-1">${pages[ST.i]}</div>
-    <div class="st-foot"><button data-st="-1" ${ST.i===0?'disabled':''}>${ico('left')} Anterior</button><span style="align-self:center;font-size:13px;opacity:.8">${ST.i+1}/${pages.length}</span><button data-st="1">${ST.i===pages.length-1?'Concluir':'Próximo'} ${ico('right')}</button></div></div>`;
+    <div class="st-foot"><button data-st="-1" ${ST.i===0?'disabled':''}>${ico('left')} Anterior</button><span style="align-self:center;font-size:12.5px;opacity:.8;text-align:center">${ST.i+1}/${pages.length}<br>toque nas laterais</span><button data-st="1">${ST.i===pages.length-1?'Concluir':'Próximo'} ${ico('right')}</button></div></div>`;
 }
+function stepStory(dir){ const n=storyPages(ST.id).length, ni=ST.i+dir; if(ni>=n){ story.close(); return; } if(ni<0) return; ST.i=ni; drawStory(); }
+let swipe=null, swiped=false;
+story.addEventListener('pointerdown',e=>{ swipe={x:e.clientX,y:e.clientY}; });
+story.addEventListener('pointerup',e=>{ if(!swipe) return; const dx=e.clientX-swipe.x, dy=e.clientY-swipe.y; swipe=null; if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5&&!e.target.closest('textarea,input')){ swiped=true; stepStory(dx<0?1:-1); } });
 story.addEventListener('click',e=>{
+  if(swiped){ swiped=false; return; }
   if(e.target===story){ story.close(); return; }
+  const card=e.target.closest('.st-card');
+  if(card&&!e.target.closest('button,a,textarea,input,label,select,form,.st-head,.st-foot')){
+    const r=card.getBoundingClientRect(); stepStory(e.clientX-r.left<r.width*0.35?-1:1); return;
+  }
   const t=e.target.closest('button,a'); if(!t) return;
   if(t.hasAttribute('data-close-story')){ story.close(); return; }
-  if(t.dataset.st){ const n=storyPages(ST.id).length; const ni=ST.i+(+t.dataset.st); if(ni>=n){story.close();return;} ST.i=Math.max(0,ni); drawStory(); return; }
+  if(t.dataset.st){ stepStory(+t.dataset.st); return; }
   if(t.dataset.quiz){ S.quiz[t.dataset.quiz]=t.dataset.v; save(); drawStory(); return; }
   if(t.dataset.vote){ S.vote=t.dataset.vote; save(); drawStory(); toast('Voto registrado'); if(V.view==='inicio') rerender(); return; }
 });
 story.addEventListener('submit',e=>{ e.preventDefault(); const v=$('#st-q').value.trim(); if(!v) return; S.pautas.push({id:'q'+Date.now(),title:v,body:'Pergunta enviada pelo story “Pergunte ao Jornal”.',section:'pergunte-ao-jornal',author:S.name||'Estudante',date:P.hoje,status:'pending'}); save(); story.close(); toast('Pergunta enviada à redação'); });
-story.addEventListener('keydown',e=>{ if(e.target.matches('textarea,input')) return; if(e.key==='ArrowRight'){ story.querySelector('.st-foot [data-st="1"]').click(); } if(e.key==='ArrowLeft'&&ST.i>0){ ST.i--; drawStory(); } });
+story.addEventListener('keydown',e=>{ if(e.target.matches('textarea,input')) return; if(e.key==='ArrowRight') stepStory(1); if(e.key==='ArrowLeft') stepStory(-1); });
 story.addEventListener('close',()=>{ if(V.view==='inicio'){ $$('.story').forEach(b=>b.classList.toggle('seen',S.seen.includes(b.dataset.story))); } });
 
 window.addEventListener('resize',()=>{ clearTimeout(window._rz); window._rz=setTimeout(renderNav,150); });
