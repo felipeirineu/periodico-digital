@@ -51,7 +51,8 @@ A base é sólida: HTML semântico, foco visível, legendas no vídeo, transcri�
 
 - Conferir, antes de publicar, as matérias com datas de 2026 (Artemis II, CBERS 06) direto nas fontes citadas.
 - Depoimentos ilustrativos estão marcados no texto, o que é correto. Manter essa marcação até haver depoimentos reais.
-- As matérias das seções têm todas a mesma data e autoria genérica. Na versão final, cada uma deve ter autoria e data reais.
+- No pacote, as matérias das seções tinham todas a mesma data e autoria genérica ("Redação"). Na prévia, cada uma ganhou autoria e data plausíveis; na versão final, devem ser a autoria e a data reais.
+- 17 das 21 matérias tinham apenas uma frase no lugar da imagem. Na prévia, todas ganharam foto ou vídeo (ver seção 4).
 
 ## 3. Proposta
 
@@ -101,17 +102,64 @@ Inspirada no [Frontiers for Young Minds](https://kids.frontiersin.org/about), pe
 - **Identificador permanente** por matéria (`EN·v1n0·e08`), volume, número e periodicidade.
 - **Fluxo editorial público**: pauta, revisão por pares estudantis (comitê de outro NAP), curadoria docente e publicação.
 
-## 4. O que a prévia faz e o que é simulado
+## 4. Imagens e vídeos
+
+Para a prévia parecer um portal em uso, todas as 21 matérias receberam foto ou vídeo. As imagens foram recortadas no formato do feed (4:3) e convertidas para WebP. Os vídeos foram cortados para 11 a 14 segundos, ficaram sem áudio (a narração original é em inglês) e ganharam legendas em português. Cada um ocupa menos de 0,5 MB. A legenda de cada matéria mostra autor, licença, fonte e link para a página original.
+
+### Créditos
+
+| Matéria | Mídia | Autor | Licença | Fonte |
+| --- | --- | --- | --- | --- |
+| O que um robô ensina sobre trabalhar em equipe? | Foto | Pacote original | — | Entre NAPs v4 |
+| O feijão acordou! | Galeria (2 fotos) | Pacote original | — | Entre NAPs v4 |
+| Uma garrafa, três camadas e muita ciência | Foto e vídeo | Pacote original | — | Entre NAPs v4 |
+| Crônica de um recreio que não queria acabar | Foto | Pacote original | — | Entre NAPs v4 |
+| A turma mediu o pátio | Foto (fita métrica) | ambabheg | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Measuring_tape.jpg) |
+| Como a sombra ficou tão grande? | Foto (teatro de sombras) | Pauloleong2002 | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Shadow_play.jpg) |
+| Onde o pátio esquenta mais? | Foto (termômetro) | Menchi | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Clinical_thermometer_38.7.JPG) |
+| O que as cores do repolho revelam? | Foto (indicador) | Epaenurk | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Red_cabbage_indicator.jpg) |
+| Que visitantes aparecem na horta? | Foto (abelha) | Muhammad Mahdi Karim | GFDL 1.2 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Apis_mellifera_flying.jpg) |
+| Uma roda para escutar quem pensa diferente | Foto (sala de aula) | NASA / Kennedy Space Center | Domínio público | [NASA](https://images.nasa.gov/details/KSC-04pd0309) |
+| Mostra de Projetos em preparação | Foto (mostra de ciências) | NASA Headquarters | Domínio público | [NASA](https://images.nasa.gov/details/201404220019HQ) |
+| NASA abre ao público imagens da Lua feitas pela Artemis II | Foto (crateras) | NASA Johnson Space Center | Domínio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Poynting_and_Kekul%C3%A9_Craters_on_the_Lunar_Far_Side_(art002e012702).jpg) |
+| | Vídeo (simulação do sobrevoo, 14 s) | NASA / Goddard | Domínio público | [NASA](https://images.nasa.gov/details/mission_1min_2160p30) |
+| Como a luz vira eletricidade em um painel solar? | Foto (painéis) | Noggen13 | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Photovoltaic_Panels.JPG) |
+| Guia apresenta as aves da Restinga de Cabedelo | Foto (bem-te-vi) | Giles Laurent | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:092_Great_kiskadee_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg) |
+| Bertha Lutz e as pistas que os anfíbios deixaram | Foto (retrato de 1925) | Restauração de Adam Cuerden | Domínio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bertha_Lutz_1925.jpg) |
+| As fases da Lua são a sombra da Terra? | Foto (eclipse lunar) | Muhammad Mahdi Karim | GFDL 1.2 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lunar_eclipse_June_2011_Total.jpg) |
+| | Vídeo (demonstração das fases, 14 s) | NASA / Johnson | Domínio público | [NASA](https://images.nasa.gov/details/jsc2020m000081-STEMonstrations_Moon_Phases) |
+| O que você perguntaria à astronauta Christina Koch? | Foto (a Lua vista da Orion) | NASA Johnson Space Center | Domínio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Across_the_Moon%E2%80%99s_Near_Side_and_Far_Side_--_art002e012216.jpg) |
+| Por que o céu é azul? | Foto (céu e nuvens) | Tiago Fioreze | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Clouds_over_the_Atlantic_Ocean.jpg) |
+| Desafio: para onde a sombra foi? | Foto (relógio de sol) | NASA / Ames Research Center | Domínio público | [NASA](https://images.nasa.gov/details/ARC-2006-ACD06-0213-055) |
+| Brasil e China avançam no projeto de um satélite | Foto (a Terra vista da Apollo 17) | NASA / tripulação da Apollo 17 | Domínio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg) |
+| | Vídeo (a Terra vista de órbita, 11 s) | NASA / Goddard | Domínio público | [NASA](https://images.nasa.gov/details/GSFC_20150420_Orbit_m11858_2014) |
+| Mãos limpas antes do lanche | Foto (mãos com espuma) | Designed by Magnific | Confirmar | Enviada pela equipe |
+
+### Cuidados antes de publicar de verdade
+
+- **Fotos de estudantes de outra escola.** "Roda de escuta" e "Mostra de Projetos" usam fotos de estudantes americanos, do acervo da NASA. Servem para a prévia; no site real, troque por fotos do Pio X com termo de uso de imagem.
+- **Licenças com compartilhamento.** As fotos CC BY-SA exigem crédito ao autor e indicação da licença, o que a prévia já faz. As duas fotos sob GFDL 1.2 (abelha e eclipse) pedem que o texto completo da licença acompanhe a imagem; o mais simples é trocá-las por fotos em domínio público ou CC BY.
+- **Foto das mãos limpas.** Confirmar se a licença da Magnific permite o uso em um site institucional.
+- **De onde vieram as imagens.** Wikimedia Commons e a biblioteca de imagens e vídeos da NASA ([images.nasa.gov](https://images.nasa.gov)), que é toda em domínio público e foi a fonte mais estável. O Wikimedia limita os pedidos vindos de servidores na nuvem; para a versão final, vale baixar as imagens manualmente ou usar fotos próprias.
+
+## 5. O que a prévia faz e o que é simulado
 
 Funciona de verdade no navegador: navegação por link (`#materia-agua` abre direto a matéria), curtir, salvar, seguir NAPs, comentar, votar, responder o quiz, sugerir pauta, publicar como comitê (com fotos), aprovar ou recusar como curadoria e ver o resultado no feed.
 
-Simulado: tudo fica guardado só no dispositivo de quem testa. Os números de curtidas, seguidores e votos partem de valores de exemplo. O perfil (Estudante, Comitê, Curadoria) é trocado na tela de Perfil para facilitar o teste; na versão final ele virá da conta escolar.
+Simulado: tudo fica guardado só no dispositivo de quem testa. Os números de curtidas, seguidores e votos e os cerca de 35 comentários da comunidade foram criados para a prévia parecer um portal em uso há algumas semanas. No lançamento, tudo começa do zero. O perfil (Estudante, Comitê, Curadoria) é trocado na tela de Perfil para facilitar o teste; na versão final ele virá da conta escolar.
 
-## 5. Próximos passos para a versão publicada
+## 6. Próximos passos para a versão publicada
 
-1. Definir o nome e validar cores com a comunicação do colégio.
-2. Login com conta institucional e papéis atribuídos pela coordenação.
-3. Banco de dados para matérias, comentários, curtidas, seguidores e votos (o manifesto atual tem `d1: null`).
-4. Endpoints novos: curtir, seguir, sugerir pauta e retorno da curadoria.
-5. Termo de uso de imagem e política de privacidade revisados pela escola.
-6. Revisão das matérias de exemplo e troca de depoimentos ilustrativos por reais.
+**Conteúdo e identidade**
+1. Validar as cores com a comunicação do colégio (o nome Entre NAPs já está decidido).
+2. Conferir nas fontes as matérias com datas de 2026 (Artemis II, CBERS 06, Christina Koch).
+3. Trocar depoimentos ilustrativos por reais e definir os nomes do expediente.
+4. Substituir as fotos de estudantes de outra escola e as fotos sob GFDL, e confirmar a licença da foto das mãos limpas (ver seção 4).
+5. Zerar curtidas, seguidores, votos e comentários de exemplo.
+
+**Técnico**
+6. Login com conta institucional e papéis atribuídos pela coordenação.
+7. Banco de dados para matérias, comentários, curtidas, seguidores e votos (o manifesto atual tem `d1: null`).
+8. Funções novas no servidor: curtir, seguir, sugerir pauta e retorno da curadoria.
+9. Hospedagem com endereço próprio.
+10. Termo de uso de imagem e política de privacidade revisados pela escola.
